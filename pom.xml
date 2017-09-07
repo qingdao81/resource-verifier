@@ -17,7 +17,6 @@
     </description>
 
     <properties>
-        <!-- maven specific properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -96,7 +95,7 @@
                     <transformers>
                         <transformer
                                 implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <mainClass>com.qingdao81.testresourceverifier.cli.CLIResourceVerifierApp</mainClass>
+                            <mainClass>com.qingdao81.resourceverifier.cli.CLIResourceVerifierApp</mainClass>
                         </transformer>
                     </transformers>
                 </configuration>
@@ -125,6 +124,9 @@
             </properties>
             <build>
                 <resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                    </resource>
                     <resource>
                         <directory>${docker.build.src}</directory>
                         <filtering>true</filtering>

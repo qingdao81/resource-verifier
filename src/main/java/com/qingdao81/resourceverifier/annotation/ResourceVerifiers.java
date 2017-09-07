@@ -1,4 +1,4 @@
-package com.qingdao81.testresourceverifier.annotation;
+package com.qingdao81.resourceverifier.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

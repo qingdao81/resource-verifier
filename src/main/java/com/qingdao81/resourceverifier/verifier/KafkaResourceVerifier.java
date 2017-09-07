@@ -1,6 +1,6 @@
-package com.qingdao81.testresourceverifier.verifier;
+package com.qingdao81.resourceverifier.verifier;
 
-import com.qingdao81.testresourceverifier.annotation.ResourceVerifier;
+import com.qingdao81.resourceverifier.annotation.ResourceVerifier;
 
 import java.nio.ByteBuffer;
 

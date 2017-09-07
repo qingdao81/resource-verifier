@@ -1,6 +1,6 @@
-package com.qingdao81.testresourceverifier.cli;
+package com.qingdao81.resourceverifier.cli;
 
-import com.qingdao81.testresourceverifier.annotation.ResourceVerifier;
+import com.qingdao81.resourceverifier.annotation.ResourceVerifier;
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;

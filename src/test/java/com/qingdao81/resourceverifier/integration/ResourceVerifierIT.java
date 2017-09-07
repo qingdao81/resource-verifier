@@ -1,10 +1,10 @@
-package com.qingdao81.testresourceverifier.integration;
+package com.qingdao81.resourceverifier.integration;
 
-import com.qingdao81.testresourceverifier.annotation.ResourceVerifier;
-import com.qingdao81.testresourceverifier.cli.ImmutableCLIProperties;
-import com.qingdao81.testresourceverifier.junit.ExternalResourceAwareRunner;
-import com.qingdao81.testresourceverifier.cli.CLIResourceVerifier;
-import com.qingdao81.testresourceverifier.verifier.*;
+import com.qingdao81.resourceverifier.annotation.ResourceVerifier;
+import com.qingdao81.resourceverifier.cli.ImmutableCLIProperties;
+import com.qingdao81.resourceverifier.junit.ExternalResourceAwareRunner;
+import com.qingdao81.resourceverifier.cli.CLIResourceVerifier;
+import com.qingdao81.resourceverifier.verifier.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

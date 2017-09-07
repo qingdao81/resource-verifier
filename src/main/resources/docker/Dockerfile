@@ -1,4 +1,4 @@
-FROM jolokia/alpine-jre-8:latest
+FROM mykro/java8-jre:latest
 
 COPY start.sh /usr/bin/
 

@@ -1,7 +1,7 @@
-package com.qingdao81.testresourceverifier.cli;
+package com.qingdao81.resourceverifier.cli;
 
-import com.qingdao81.testresourceverifier.annotation.ResourceVerifier;
-import com.qingdao81.testresourceverifier.verifier.ResourceVerifierExecutor;
+import com.qingdao81.resourceverifier.annotation.ResourceVerifier;
+import com.qingdao81.resourceverifier.verifier.ResourceVerifierExecutor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

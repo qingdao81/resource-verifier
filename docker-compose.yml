@@ -1,0 +1,15 @@
+version: '3'
+services:
+
+    zookeeper:
+        image: wurstmeister/zookeeper:latest
+        ports:
+            - "2181:2181"
+
+    verify-kafka:
+        image: qingdao81/resource-verifier:0.0.1-SNAPSHOT
+        environment:
+            HOST: zookeeper
+            TYPE: ZOOKEEPER
+            PORT: 2181
+            TIMEOUT: 60000

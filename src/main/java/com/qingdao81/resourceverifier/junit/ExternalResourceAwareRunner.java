@@ -1,8 +1,8 @@
-package com.qingdao81.testresourceverifier.junit;
+package com.qingdao81.resourceverifier.junit;
 
-import com.qingdao81.testresourceverifier.annotation.ResourceVerifier;
-import com.qingdao81.testresourceverifier.annotation.ResourceVerifiers;
-import com.qingdao81.testresourceverifier.verifier.ResourceVerifierExecutor;
+import com.qingdao81.resourceverifier.annotation.ResourceVerifier;
+import com.qingdao81.resourceverifier.annotation.ResourceVerifiers;
+import com.qingdao81.resourceverifier.verifier.ResourceVerifierExecutor;
 import com.google.common.collect.Sets;
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.InitializationError;

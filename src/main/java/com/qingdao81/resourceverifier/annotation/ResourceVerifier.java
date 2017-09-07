@@ -1,4 +1,4 @@
-package com.qingdao81.testresourceverifier.annotation;
+package com.qingdao81.resourceverifier.annotation;
 
 import com.google.common.base.Joiner;
 

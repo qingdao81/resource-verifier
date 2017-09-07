@@ -27,4 +27,4 @@ if [ "${VERBOSE}" = "true" ]; then
     echo "using params: ${PARAMS}"
 fi
 
-java -jar /opt/cloud/${project.artifactId}/bin/${project.artifactId}.jar ${PARAMS}
+java -jar /tmp/${project.artifactId}.jar ${PARAMS}

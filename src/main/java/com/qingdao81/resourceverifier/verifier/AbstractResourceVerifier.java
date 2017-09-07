@@ -1,6 +1,6 @@
-package com.qingdao81.testresourceverifier.verifier;
+package com.qingdao81.resourceverifier.verifier;
 
-import com.qingdao81.testresourceverifier.annotation.ResourceVerifier;
+import com.qingdao81.resourceverifier.annotation.ResourceVerifier;
 import com.google.common.base.Stopwatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

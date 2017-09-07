@@ -2,14 +2,15 @@
 
 Resource verifier can be used in tests and in a docker environment to verify that a certain service is available.
 
-## table of contents
-[description](#description)
-[linking](#linking)
-[supported resource verifiers](#verifiers)
+##### table of contents
+[description](#description)  
+[linking](#linking)<br/>
+[supported resource verifiers](#verifiers)  
 [test resource verifier in an integration test](#integration)
  * [junit](#junit)
  * [testng](#testng)
  * [maven](#maven)
+ 
 [test resource verifier in a docker environment](#docker)
  * [build docker image](#dockerimage)
  * [docker](#dockercommand)
@@ -57,6 +58,8 @@ Resource verifiers can be used in integration tests and in docker environments -
 * mongo
 * samza
 
+See [ResourceVerifier.Type](https://github.com/qingdao81/resource-verifier/blob/master/src/main/java/com/qingdao81/resourceverifier/annotation/ResourceVerifier.java#L58) for more details.
+
 <a name="integration" />
 
 ## test resource verifier in an integration test
@@ -80,8 +83,8 @@ public class KafkaIT {
 }
 ```
 
-This resource verifier checks continuously for the availability of kafka and zookeeper on the given host and port
-and fails in case the verification takes longer than the timeout. In case of a timeout the tests are not executed.
+These resource verifier check continuously for the availability of kafka and zookeeper on the given host and port
+and fail in case the verification takes longer than the timeout. In case of a timeout the tests of the test class are not executed.
 
 Each resource verifier provides default values for host, port and timeout. If the default values are sufficient the above resource
 verifiers can also be defined like this:
@@ -104,7 +107,7 @@ TODO
 [maven failsafe plugin](http://maven.apache.org/surefire/maven-failsafe-plugin/) and resource verifiers are a powerful combination. The failsafe plugin can prepare and destroy a
 local container bases test environment in the corresponding build phases (pre-integration-test and post-integration-test) 
 and the resource verifiers are used to check for the availability of the services before executing a test.
-See the ***integration-test* profile in the pom.xml for more details. 
+See the **integration-test profile in the pom.xml** for more details. 
 
 You can run the integration test of the resource verifier project with the command:
 
@@ -134,7 +137,7 @@ mvn clean install -Pdocker
 ### docker command
 
 ```
-docker run --rm -e HOST=kafka -e TYPE=KAFKA -e PORT=9092 -e TIMEOUT=25000 qingdao81/resource-verifier:0.0.1-SNAPSHOT
+docker run --rm -e HOST=zookeeper -e TYPE=ZOOKEEPER -e PORT=2181 -e TIMEOUT=60000 qingdao81/resource-verifier:0.0.1-SNAPSHOT
 ```
 
 <a name="dockercompose" />
@@ -144,16 +147,28 @@ docker run --rm -e HOST=kafka -e TYPE=KAFKA -e PORT=9092 -e TIMEOUT=25000 qingda
 ```
 version: '3'
 services:
-    verify-kafka:
+
+    zookeeper:
+        image: wurstmeister/zookeeper:latest
+        ports:
+            - "2181:2181"
+
+    verify-zookeeper:
         image: qingdao81/resource-verifier:0.0.1-SNAPSHOT
         environment:
-            HOST: kafka
-            TYPE: KAFKA
-            PORT: 9092
-            TIMEOUT: 25000
+            HOST: zookeeper
+            TYPE: ZOOKEEPER
+            PORT: 2181
+            TIMEOUT: 60000
 ```
 
-This resource verifier container checks continuously if the kafka container is available on dns kafka and port 9092. 
-If the kafka container is not up after 25000 ms the resource verifier docker container fails, prints an error message and
+Copy this to a file docker-compose.yml and run with:
+
+```
+docker-compose up 
+```
+
+This resource verifier container checks continuously if the zookeeper container is available on dns zookeeper and port 2181. 
+If the zookeeper container is not up after 60000 ms the resource verifier docker container fails, prints an error message and
 exits with exit code 1. If the verification was successful the resource verifier docker container prints a success message 
 and exits with exit code 0.
